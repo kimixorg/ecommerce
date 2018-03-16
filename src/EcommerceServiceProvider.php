@@ -3,6 +3,7 @@
 namespace Kimix\Ecommerce;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class EcommerceServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,9 @@ class EcommerceServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'kimix-ecommerce');
+        include __DIR__ . '/../routes.php';
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'kimix-ecommerce');
 
         // $this->publishes([
         //     __DIR__.'/../resources/views' => $this->app->basePath('resources/views/vendor/kimix-ecommerce'),
